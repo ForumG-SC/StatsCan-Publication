@@ -8,6 +8,11 @@ on:
 jobs:
   Build-for-android:
     runs-on: macos-latest
+    strategy:
+      matrix:
+        qt_arch: [android_x86, android_armv7, android_arm64_v8a]
+        qt_ver: [5.12.10]
+        qt_target: [android]
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
