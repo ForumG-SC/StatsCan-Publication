@@ -4,15 +4,9 @@ on:
   push :
    branches:
       - main
-
 jobs:
   Build-for-android:
     runs-on: macos-latest
-    strategy:
-      matrix:
-        qt_arch: [android_x86, android_armv7, android_arm64_v8a]
-        qt_ver: [5.12.10]
-        qt_target: [android]
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -32,14 +26,3 @@ jobs:
         run: yarn install
       - name: Build Android APK Bundle
         run: expo build:android
-      - name: Gets latest created release info
-        id: latest_release_info
-        uses: jossef/action-latest-release-info@v1.1.0
-      - name: Upload Release Asset
-        id: upload-release-asset 
-        uses: actions/upload-release-asset@v1
-        with:
-          upload_url: ${{ steps.latest_release_info.outputs.upload_url }}
-          asset_path: release/build/outputs/apk/debug/release-debug.apk
-          asset_name: ${{ env.RELEASE_NAME }}-${{ steps.latest_release_info.outputs.tag_name }}-for-${{ matrix.qt_arch }}.apk
-          asset_content_type: application/zip
