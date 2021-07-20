@@ -30,9 +30,25 @@ jobs:
           expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
       - name: Install deps
         run: yarn install
-      - name: Build iOS app
-        run: expo build:ios
-        env:
-            EXPO_APPLE_ID: ${{secrets.EXPO_APPLE_ID}}
-            EXPO_APPLE_ID_PASSWORD: ${{secrets.EXPO_APPLEPASS}} 
+#       - name: Build iOS app
+#         run: expo build:ios
+#         env:
+#             EXPO_APPLE_ID: ${{secrets.EXPO_APPLE_ID}}
+#             EXPO_APPLE_ID_PASSWORD: ${{secrets.EXPO_APPLEPASS}} 
+      - name: Create artifacts folder
+        run: mkdir -p ipas
+      - name: Save artifacts
+        run: curl "$(expo url:ipa --non-interactive)" -o ipas/ci-proto.tar.gz
+      - name: Unizip ipa
+        run: tar -xvzf ipas/ci-proto.tar.gz -C ./ipas
+      - uses: actions/upload-artifact@v2
+        with:
+          name: ios-builds
+          path: ipas/
+      - name: Install appium 
+        run: npm install -g appium appium-doctor
+      # - name: Run apium checks
+      #   run: appium-doctor --ios
+      - name: Run apium tests
+        run: yarn e2e-mob
  
