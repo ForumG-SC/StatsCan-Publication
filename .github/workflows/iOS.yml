@@ -30,11 +30,11 @@ jobs:
           expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
       - name: Install deps
         run: yarn install
-#       - name: Build iOS app
-#         run: expo build:ios
-#         env:
-#             EXPO_APPLE_ID: ${{secrets.EXPO_APPLE_ID}}
-#             EXPO_APPLE_ID_PASSWORD: ${{secrets.EXPO_APPLEPASS}} 
+      - name: Build iOS app
+        run: expo build:ios
+        env:
+            EXPO_APPLE_ID: ${{secrets.EXPO_APPLE_ID}}
+            EXPO_APPLE_ID_PASSWORD: ${{secrets.EXPO_APPLEPASS}} 
       - name: Create artifacts folder
         run: mkdir -p ipas
       - name: Save artifacts
