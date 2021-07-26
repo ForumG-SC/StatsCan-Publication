@@ -17,6 +17,7 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.test.testcicd",
       "supportsTablet": true,
      
     },
