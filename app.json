@@ -18,8 +18,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.ForumG-SC.publication",
-      "buildNumber": "1.0.0"
+     
     },
     "android": {
       "adaptiveIcon": {
