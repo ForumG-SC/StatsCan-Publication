@@ -26,3 +26,13 @@ jobs:
         run: yarn install
       - name: Build Android APK Bundle
         run: expo build:android
+      - name: Upload result
+        uses: actions/upload-artifact@v2
+        with:
+          name: android_build_artifact_apk
+          path: build/app/outputs/android-apk/app-release.apk
+      - name: Upload result
+        uses: actions/upload-artifact@v2
+        with:
+          name: android_build_artifact_appbundle
+          path: build/app/outputs/bundle/release/app-release.aab
