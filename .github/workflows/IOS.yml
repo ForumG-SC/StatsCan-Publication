@@ -19,7 +19,7 @@ jobs:
           expo-version: 4.x
           expo-username: ${{secrets.EXPO_CLI_USERNAME}}
           expo-password: ${{secrets.EXPO_CLI_PASSWORD}}
-      - run: yarn install
+      - run: yarn 
       - run: expo build:ios --non-interactive --apple-id ${{secrets.EXPO_APPLE_ID}}
         env:
             EXPO_APPLE_PASSWORD: ${{secrets.EXPO_APPLEPASS}}
