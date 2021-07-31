@@ -1,10 +1,8 @@
 name: Publish to TestFlight
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  release:
+    types: [created]
 
 jobs:
   publish-to-testflight:
