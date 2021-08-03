@@ -66,4 +66,4 @@ jobs:
           expo_apple_id: ${{ secrets.EXPO_APPLE_ID }}
           expo_apple_password: ${{ secrets.EXPO_APPLEPASS }}
           app_specific_password: ${{ secrets.EXPO_APP_SPECIFICPASS }}
-          tfa_phone_number: "+1 (343) 777-0731"
+          tfa_phone_number: "+1 (000)-000-0000"
