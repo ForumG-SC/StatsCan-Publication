@@ -19,6 +19,8 @@
     "ios": {
       "bundleIdentifier": "com.test.testcicd",
       "supportsTablet": true,
+       "config": {
+        "usesNonExemptEncryption": false
      
     },
     "android": {
@@ -26,7 +28,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.yourcompany.yourappname",
+      "package": "com.test.testcicd",
       "versionCode": 1
     },
     "web": {
