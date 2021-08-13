@@ -2,7 +2,7 @@
   "expo": {
     "name": "Publications",
     "slug": "Publications",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -19,7 +19,7 @@
     "ios": {
       "bundleIdentifier": "com.test.testcicd",
       "supportsTablet": true,
-       "buildNumber": "0.0.1"
+       "buildNumber": "1"
      
     },
     "android": {
@@ -28,7 +28,7 @@
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.yourcompany.yourappname",
-      "versionCode": 1
+      "versionCode": 0.0.1
     },
     "web": {
       "favicon": "./assets/favicon.png"
