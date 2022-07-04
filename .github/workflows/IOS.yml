@@ -1,0 +1,32 @@
+name: Build and Publish to TestFlight
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  publish-to-testflight:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - uses: expo/expo-github-action@v6
+        with:
+          expo-version: 4.x
+          username: ${{secrets.EXPO_CLI_USERNAME}}
+          password: ${{secrets.EXPO_CLI_PASSWORD}}
+      - run: yarn install
+      - run: expo build:ios --non-interactive
+        env:
+          EXPO_APPLE_ID: ${{secrets.EXPO_APPLE_ID}}
+          EXPO_APPLE_PASSWORD: ${{secrets.EXPO_APPLEPASS}}
+      - run: curl -O `expo url:ipa`
+      - run: gem install fastlane -N
+      - run: fastlane pilot upload
+        env:
+            FASTLANE_USER: ${{secrets.EXPO_APPLE_ID}}
+            FASTLANE_PASSWORD: ${{secrets.EXPO_APPLEPASS}}
+            FASTLANE_SESSION: ${{secrets.FASTLANE_SESSION}}
+            FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD}}
