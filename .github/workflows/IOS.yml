@@ -2,7 +2,7 @@ name: Build and Publish to TestFlight
 
 on:
   release:
-    types: [created]
+    types: main
 jobs:
   publish-to-testflight:
     runs-on: macos-latest
