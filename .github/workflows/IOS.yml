@@ -2,7 +2,8 @@ name: Build and Publish to TestFlight
 
 on:
   release:
-    types: main
+    types: [created]
+    branches: main
 jobs:
   publish-to-testflight:
     runs-on: macos-latest
