@@ -1,4 +1,4 @@
-ame: build-ios-app
+name: build-ios-app
 on:
   push:
     branches:
