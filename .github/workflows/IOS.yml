@@ -1,4 +1,4 @@
-name: Publish to TestFlight
+name: Build and Publish to TestFlight
 
 on:
   release:
