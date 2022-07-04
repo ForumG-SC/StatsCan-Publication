@@ -17,15 +17,10 @@ default_platform(:ios)
 
 platform :ios do
   desc "Description of what the lane does"
-  lane :release do
-   api_key = app_store_connect_api_key(
-    key_id: "XQJS886RS9",
-    issuer_id: "649e2579-04d0-48cd-88ce-24a61aca3a81",
-    key_filepath: "./AuthKey_XQJS886RS9.p8",
-    duration: 1200, # optional (maximum 1200)
-    in_house: false # optional but may be required if using match/sigh
-  )
-
-  pilot(api_key: api_key)
+   lane :beta do
+    setup_ci if ENV['CI']
+    match(type: 'appstore')
+    build_app
+    upload_to_testflight(skip_waiting_for_build_processing: true)
   end
 end
