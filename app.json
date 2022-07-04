@@ -19,7 +19,7 @@
     "ios": {
       "bundleIdentifier": "com.test.testcicd",
       "supportsTablet": true,
-       "buildNumber": "1"
+       "buildNumber": "0.0.1"
      
     },
     "android": {
@@ -27,8 +27,8 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.yourcompany.yourappname",
-      "versionCode": 0.0.1
+      "package": "ccom.test.testcicd",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
