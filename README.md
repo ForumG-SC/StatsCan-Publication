@@ -1,2 +1,2 @@
 "# StatsCan-Publication" 
-demo
+demo cicd
