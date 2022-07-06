@@ -13,21 +13,18 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "bundleIdentifier": "com.test.testcicd",
       "supportsTablet": true,
-       "buildNumber": "0.0.2"
-     
+      "buildNumber": "0.0.3"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "ccom.test.testcicd",
+      "package": "com.test.testcicd",
       "versionCode": 2
     },
     "web": {
