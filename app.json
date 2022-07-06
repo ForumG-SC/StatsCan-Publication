@@ -11,9 +11,12 @@
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/0831a914-c224-4aa4-af1c-5fe2f5707625"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "bundleIdentifier": "com.test.testcicd",
       "supportsTablet": true,
@@ -25,11 +28,13 @@
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.test.testcicd",
-      "versionCode": 2,
-      "runtimeVersion": "0.0.3"
+      "versionCode": 2
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
     }
   }
 }
