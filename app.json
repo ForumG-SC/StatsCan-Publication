@@ -8,8 +8,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff",
-      "runtimeVersion": "0.0.3"
+      "backgroundColor": "#ffffff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -26,7 +25,8 @@
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.test.testcicd",
-      "versionCode": 2
+      "versionCode": 2,
+      "runtimeVersion": "0.0.3"
     },
     "web": {
       "favicon": "./assets/favicon.png"
